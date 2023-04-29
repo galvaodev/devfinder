@@ -1,5 +1,11 @@
+import { Home } from '@/presetations/pages'
 import React from 'react'
 
 export const homePage: React.FC = () => {
-  return <h1>Home page</h1>
+  return (
+    <>
+      <Home />
+      <h1>kdopsakpdok</h1>
+    </>
+  )
 }
