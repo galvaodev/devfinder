@@ -5,7 +5,6 @@ export const homePage: React.FC = () => {
   return (
     <>
       <Home />
-      <h1>kdopsakpdok</h1>
     </>
   )
 }
