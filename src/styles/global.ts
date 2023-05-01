@@ -1,11 +1,13 @@
 
 import {
+  DefaultTheme,
+  GlobalStyleComponent,
   createGlobalStyle,
-  css,
-  DefaultTheme
+  css
+
 } from 'styled-components'
 
-const GlobalStyles: DefaultTheme = createGlobalStyle`
+const GlobalStyles: GlobalStyleComponent<{}, DefaultTheme> = createGlobalStyle`
   * {
     margin: 0;
     border: 0;
@@ -15,11 +17,12 @@ const GlobalStyles: DefaultTheme = createGlobalStyle`
   input, button {
     font-family: 'Space Mono', monospace;
   }
-  ${({ theme }: any) => css`
+  ${({ theme }) => css`
     body {
       background: ${theme.colors.background};
       font-family: 'Space Mono', monospace;
     }
   `}
+  
 `
 export default GlobalStyles

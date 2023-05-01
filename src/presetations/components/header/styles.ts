@@ -8,7 +8,7 @@ export const HeaderContainer = styled.header`
 `
 
 export const Title = styled.span`
-  color: ${({ theme }) => theme.colors.red100};
+  color: ${({ theme }) => theme.colors.text};
   font-size: 1.625rem;
   font-weight: 700;
   @media screen and (max-width: ${({ theme }) => theme.screens.md}){
