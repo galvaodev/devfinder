@@ -1,14 +1,10 @@
 export interface UserGithubProfile {
-  name: string
-  avatarUrl: string
-  login: string
-  followers: number
-  following: number
-  twitterUsername: string
-  location: string
-  htmlUrl: string
-  reposQuantity: string
-  createdAt: string
+  admin?: boolean
+  avatarUrl?: string
+  login?: string
+  name?: string
+  htmlUrl?: string
+  onClick?: () => void
 }
 
 export type UserState = {

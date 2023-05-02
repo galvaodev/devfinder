@@ -12,7 +12,7 @@ export interface SkeletonLoadingProps {
   margin?: string
 }
 
-export const SkeletonLoading: React.FC<SkeletonLoadingProps> = ({
+const SkeletonLoading: React.FC<SkeletonLoadingProps> = ({
   width,
   height,
   borderRadius,
@@ -35,3 +35,5 @@ export const SkeletonLoading: React.FC<SkeletonLoadingProps> = ({
     />
   )
 }
+
+export default SkeletonLoading

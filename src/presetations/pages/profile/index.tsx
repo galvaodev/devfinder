@@ -1,29 +1,25 @@
-import { ProfileCard } from '@/presetations/components/profileCard'
-import React from 'react'
-import { useParams } from 'react-router-dom'
+import { ProfileCard } from '@/presetations/components'
+import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
+import { useRecoilValue } from 'recoil'
+import { currentGitSearchState } from '@/presetations/components/atoms/atoms'
+import { GitSearchItems } from '@/domain/models'
 
-type Props = {
-  id: string
-}
+import * as S from './styles'
 
 const profile: React.FC = () => {
-  const { id } = useParams<Props>()
+  const history = useHistory()
+  const { getCurrentGitSearch } = useRecoilValue(currentGitSearchState)
+  const [profile] = useState<GitSearchItems>({ ...getCurrentGitSearch().profile })
 
   return (
     <>
-      {id}
       <ProfileCard
-        avatarUrl="https://avatars.githubusercontent.com/u/28438?v=4"
-        followers={2}
-        following={2}
-        htmlUrl="aa"
-        location="aa"
-        login="aa"
-        name="aa"
-        reposQuantity="aa"
-        twitterUsername='aa'
-        createdAt="2008-10-10T17:43:59Z"
+        avatarUrl={profile.avatar_url}
+        htmlUrl={profile.html_url}
+        login={profile.login}
       />
+      <S.Button onClick={() => history.replace('/')}>voltar</S.Button>
     </>
   )
 }
