@@ -44,8 +44,8 @@ const Home: React.FC<Props> = ({ gitSearch }: Props) => {
     history.replace(`/profile/${profile.login}`)
   }
 
-  const listProfile = (): void => {
-    state.searchList.map((searchItem: GitSearchItems) => <ProfileCard
+  const listProfile = (): React.ReactNode => {
+    return state.searchList.map((searchItem: GitSearchItems) => <ProfileCard
       key={searchItem.id}
       onClick={() => handleProfile(searchItem)}
       avatarUrl={searchItem.avatar_url}
@@ -74,7 +74,7 @@ const Home: React.FC<Props> = ({ gitSearch }: Props) => {
 
       {state.isLoading
         ? <ProfileCardLoading />
-        : listProfile}
+        : listProfile()}
     </>
   )
 }
