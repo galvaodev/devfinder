@@ -1,8 +1,8 @@
 import * as S from '@/presetations/components/profileCard/styles'
-import { SkeletonLoading } from '@/presetations/components/skeletonLoading'
+import { SkeletonLoading } from '@/presetations/components'
 import React from 'react'
 
-export const ProfileCardLoading: React.FC = () => {
+const ProfileCardLoading: React.FC = () => {
   return (
     <S.ProfileCardContainer>
       <SkeletonLoading borderRadius='50%' width='80px' height='80px' mr="20px" />
@@ -37,3 +37,5 @@ export const ProfileCardLoading: React.FC = () => {
     </S.ProfileCardContainer>
   )
 }
+
+export default ProfileCardLoading

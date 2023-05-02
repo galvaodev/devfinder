@@ -1,14 +1,14 @@
 import { MagnifyingGlass } from 'phosphor-react'
-import React, { Dispatch, SetStateAction } from 'react'
+import React from 'react'
 import * as S from './styles'
 
 type inputProps = {
-  setSearchInput: Dispatch<SetStateAction<string>>
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
   searchInput: string
   error: boolean
 }
 
-export const Input: React.FC<inputProps> = ({ searchInput, setSearchInput, error }) => {
+const Input: React.FC<inputProps> = ({ searchInput, onChange, error }) => {
   return (
     <S.WrapperInput>
       <MagnifyingGlass size={32} />
@@ -16,9 +16,11 @@ export const Input: React.FC<inputProps> = ({ searchInput, setSearchInput, error
         value={searchInput}
         placeholder="Search GitHub username..."
         maxLength={30}
-        onChange={(e) => setSearchInput(e.target.value)}
+        onChange={(e) => onChange(e)}
       />
       {error && <S.ErrorMessage>No results</S.ErrorMessage>}
     </S.WrapperInput>
   )
 }
+
+export default Input

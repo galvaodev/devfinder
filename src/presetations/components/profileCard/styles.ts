@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import theme from '@/styles/theme'
 
 export const ProfileCardContainer = styled.div`
+  cursor: pointer;
   display: flex;
   justify-content: center;
   padding: 3rem;
@@ -143,6 +144,7 @@ export const SocialMedia = styled.div`
 
 export const Description = styled.div`
   display: flex;
+  cursor: pointer;
   margin-left: 0.75rem;
   color: ${({ theme }) => theme.colors.description};
   font-size: 0.9375rem;

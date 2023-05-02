@@ -1,82 +1,41 @@
-import { Buildings, Link, MapPin, TwitterLogo } from 'phosphor-react'
+import { Link } from 'phosphor-react'
 import { UserGithubProfile } from '@/types/types'
 import * as S from './styles'
 import React from 'react'
 
-export const ProfileCard: React.FC<UserGithubProfile> = ({
+const ProfileCard: React.FC<UserGithubProfile> = ({
   avatarUrl,
-  followers,
-  following,
+  admin,
   htmlUrl,
-  location,
   login,
-  name,
-  reposQuantity,
-  twitterUsername,
-  createdAt
+  onClick
 }) => {
-  const date = new Intl.DateTimeFormat('en-US', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric'
-  }).format(new Date(createdAt))
-
-  const day = date.split(',')[0].split(' ')[1]
-  const month = date.split(',')[0].split(' ')[0]
-  const year = date.split(',')[1]
+  const openInNewTab = (url: string): void => {
+    window.open(url, '_blank', 'noopener,noreferrer')
+  }
 
   return (
-    <S.ProfileCardContainer>
+    <S.ProfileCardContainer onClick={onClick}>
       <S.ProfilePhoto src={avatarUrl} alt="avatar" />
       <S.ProfileInformations>
         <S.ProfileHeader>
           <S.UserContent>
-            <S.UserName>{name}</S.UserName>
+            <S.UserName>{login}</S.UserName>
             <S.UserShortName>@{login}</S.UserShortName>
-            <S.AccountCreationDate>Joined {day} {month} {year}</S.AccountCreationDate>
+            <S.UserShortName>Admin: {admin ? 'Sim' : 'Não'}</S.UserShortName>
           </S.UserContent>
         </S.ProfileHeader>
-        <S.UserBio>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</S.UserBio>
-
-        <S.ProfileNumbers>
-          <S.ProfileNumbersInfoContent>
-            <S.InfoTitle>Repos</S.InfoTitle>
-            <S.Quantity>{reposQuantity}</S.Quantity>
-          </S.ProfileNumbersInfoContent>
-
-          <S.ProfileNumbersInfoContent>
-            <S.InfoTitle>Followers</S.InfoTitle>
-            <S.Quantity>{followers}</S.Quantity>
-          </S.ProfileNumbersInfoContent>
-
-          <S.ProfileNumbersInfoContent>
-            <S.InfoTitle>Following</S.InfoTitle>
-            <S.Quantity>{following}</S.Quantity>
-          </S.ProfileNumbersInfoContent>
-        </S.ProfileNumbers>
-
-        <S.SocialMediasContainer>
-          <S.SocialMedia>
-            <MapPin size={20} />
-            <S.Description>{location ?? 'Not Available'}</S.Description>
-          </S.SocialMedia>
-
-          <S.SocialMedia>
-            <TwitterLogo size={20} />
-            <S.Description>{twitterUsername ?? 'Not Available'}</S.Description>
-          </S.SocialMedia>
-
-          <S.SocialMedia>
-            <Link size={20} />
-            <S.Description>{htmlUrl}</S.Description>
-          </S.SocialMedia>
-
-          <S.SocialMedia>
-            <Buildings size={20} />
-            <S.Description>@github</S.Description>
-          </S.SocialMedia>
-        </S.SocialMediasContainer>
+        {htmlUrl && (
+          <S.SocialMediasContainer>
+            <S.SocialMedia>
+              <Link size={20} />
+              <S.Description onClick={() => openInNewTab(htmlUrl)}>{htmlUrl}</S.Description>
+            </S.SocialMedia>
+          </S.SocialMediasContainer>
+        )}
       </S.ProfileInformations>
     </S.ProfileCardContainer>
   )
 }
+
+export default ProfileCard
