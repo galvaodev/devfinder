@@ -13,6 +13,7 @@ const Input: React.FC<inputProps> = ({ searchInput, onChange, error }) => {
     <S.WrapperInput>
       <MagnifyingGlass size={32} />
       <S.InputStyled
+        data-testid="input"
         value={searchInput}
         placeholder="Search GitHub username..."
         maxLength={30}

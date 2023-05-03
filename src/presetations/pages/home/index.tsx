@@ -56,7 +56,7 @@ const Home: React.FC<Props> = ({ gitSearch }: Props) => {
   }
 
   useEffect(() => {
-    if (getCurrentGitSearch().search) {
+    if (getCurrentGitSearch()?.search) {
       setState(old => ({ ...old, search: getCurrentGitSearch().search }))
       conectSearch(getCurrentGitSearch().search)
     }
@@ -64,7 +64,7 @@ const Home: React.FC<Props> = ({ gitSearch }: Props) => {
 
   return (
     <>
-      <S.FormContainer onSubmit={handleSearch}>
+      <S.FormContainer data-testid="form" onSubmit={handleSearch}>
         <Input
           searchInput={state.search}
           error={state.isFormInvalid}
