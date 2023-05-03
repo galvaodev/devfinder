@@ -1,20 +1,26 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import theme from '@/styles/theme'
 
-export const ProfileCardContainer = styled.div`
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  padding: 3rem;
-  background: ${({ theme }) => theme.colors.body};
-  border-radius: 0.937rem;
-  margin-top: 1.5rem;
-  @media screen and (max-width: ${theme.screens.md}){
-   padding: 2.5rem;
-  }
-  @media screen and (max-width: ${theme.screens.sm}){
-    padding: 2rem 1.5rem 3rem;
-  }
+interface ProfileCardContainerProps {
+  cursor?: boolean
+}
+
+export const ProfileCardContainer = styled.div<ProfileCardContainerProps>`
+ ${({ cursor }) => css`
+    cursor: ${cursor ? 'pointer' : 'default'};
+    display: flex;
+    justify-content: center;
+    padding: 3rem;
+    background: ${({ theme }) => theme.colors.body};
+    border-radius: 0.937rem;
+    margin-top: 1.5rem;
+    @media screen and (max-width: ${theme.screens.md}){
+      padding: 2.5rem;
+    }
+    @media screen and (max-width: ${theme.screens.sm}){
+      padding: 2rem 1.5rem 3rem;
+    }
+ `}
 `
 
 export const ProfilePhoto = styled.img`
