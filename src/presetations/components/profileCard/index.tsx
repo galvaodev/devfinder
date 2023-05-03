@@ -15,7 +15,7 @@ const ProfileCard: React.FC<UserGithubProfile> = ({
   }
 
   return (
-    <S.ProfileCardContainer onClick={onClick}>
+    <S.ProfileCardContainer cursor={!!onClick} onClick={onClick}>
       <S.ProfilePhoto src={avatarUrl} alt="avatar" />
       <S.ProfileInformations>
         <S.ProfileHeader>
