@@ -1,113 +1,158 @@
+
+  
+
 # **DevFinder**
+
+  
+
+ 
+
+  
 
 O objetivo realizar pesquisas de usuário do github.
 
+  
+> ## Rodar o projeto
+> 
+- Instalação das dependencias:
+`npm install`
+
+- Rodar o projeto na máquina utilizando
+`npm dev`
+
+Utilizar node versão: 16.10.0 >
+
+
 > ## Design Patterns
 
-- Factory
+  
 
-- Adapter
+* Factory
 
-- Composite
+* Adapter
 
-- Decorator
+* Composite
 
-- Dependency Injection
+* Decorator
 
-- Composition Root
+* Dependency Injection
 
-- Builder
+* Composition Root
+
+* Builder
+
+
+  
 
 > ## Metodologias e Designs
 
-- TDD
+  
 
-- Clean Architecture
+* TDD
 
-- DDD
+* Clean Architecture
 
-- Reactive Programming
+* DDD
 
-- Responsive Layout
+* Reactive Programming
 
-- Conventional Commits
+* Responsive Layout
 
-- GitFlow
+* Conventional Commits
 
-- Modular Design
+* GitFlow
 
-- Dependency Diagrams
+* Modular Design
 
-- Use Cases
+* Dependency Diagrams
+
+* Use Cases
+
+
+  
 
 > ## Bibliotecas e Ferramentas
 
-- Typescript
+  
 
-- React
+* Typescript
 
-- Recoil
+* React
 
-- React Testing Library
+* Recoil
 
-- React Router DOM
+* React Testing Library
 
-- Jest
+* React Router DOM
 
-- Axios
+* Jest
 
-- Git
+* Axios
 
-- Webpack
+* Git
 
-- Styled Components
+* Webpack
 
-- Faker
+* Styled Components
 
-- Husky
 
-- Lint Staged
 
-- Eslint
+* Faker
+
+
+* Husky
+
+* Lint Staged
+
+* Eslint
+
+  
 
 > ## Features do React
 
-- Functional Components
+  
 
-- UseState
+* Functional Components
 
-- UseContext
+* UseState
 
-- UseEffect
+* UseContext
 
-- Custom Hooks
+* UseEffect
 
-- UseRecoilState
+* Custom Hooks
 
-- UseResetRecoilState
+* UseRecoilState
 
-- UseRecoilValue
+* UseResetRecoilState
 
-- UseRecoilSetState
+* UseRecoilValue
 
-- Atom
+* UseRecoilSetState
 
-- Router
+* Atom
 
+* Router
+
+  
 > ## Features do Typescript
 
-- POO
+  
+* POO 
 
-- Interface
+* Interface
 
-- Type Alias
+* Type Alias
 
-- Namespace
+* Namespace
 
-- Module
+* Module
 
-- Utility Types
+* Utility Types
 
-- Modularização de Paths
+* Modularização de Paths
 
-- Build
+* Build
+
+
+  
