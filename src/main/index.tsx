@@ -1,14 +1,15 @@
 import Router from '@/main/routes/router'
+import { createRoot } from 'react-dom/client'
 import { ThemeProvider } from 'styled-components'
-import ReactDOM from 'react-dom'
 import React from 'react'
 import theme from '@/styles/theme'
 import GlobalStyles from '@/styles/global'
 
-ReactDOM.render(
+const root = createRoot(document.getElementById('main'))
+
+root.render(
   <ThemeProvider theme={theme}>
     <GlobalStyles />
     <Router />
-  </ThemeProvider>,
-  document.getElementById('main')
+  </ThemeProvider>
 )
